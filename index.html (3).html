@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بيوتي هب | Beauty Hub — طب التجميل الفاخر</title>
+<meta name="description" content="بيوتي هب — منصة طب التجميل الفاخر في ٦ دول. عيادات متميزة، أطباء معتمدون، نتائج مضمونة.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#D4AF37; --gold-light:#E7C873; --gold-dark:#B8941F;
+  --black:#0B0B0B; --black-2:#131313; --black-3:#1A1710;
+  --ink:#F5F1E6; --ink-dim:rgba(245,241,230,.6); --line:rgba(212,175,55,.22);
+  --gradient-gold:linear-gradient(135deg,#E7C873 0%,#D4AF37 50%,#B8941F 100%);
+  --gradient-dark:radial-gradient(120% 90% at 50% 0%,#221b0b 0%,#121008 38%,#0B0B0B 78%);
+  --display:'Inter','Noto Kufi Arabic',sans-serif; --body:'Inter','Noto Sans Arabic',sans-serif; --latin:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--black);color:var(--ink);line-height:1.8;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--display)}
+svg{display:block}
+.container{width:min(1140px,92%);margin-inline:auto}
+.gold-text{background:var(--gradient-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+section{padding:88px 0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+.sec-title{display:flex;align-items:center;gap:18px;justify-content:center;margin-bottom:14px}
+.sec-title::before,.sec-title::after{content:"";height:1px;flex:0 0 64px;background:linear-gradient(90deg,transparent,var(--gold));opacity:.6}
+.sec-title::after{background:linear-gradient(270deg,transparent,var(--gold))}
+.sec-title span{font-size:.85rem;letter-spacing:.3em;color:var(--gold);font-weight:600;white-space:nowrap;font-family:var(--display)}
+.section-head{text-align:center;max-width:680px;margin:0 auto 50px}
+.section-head h2{font-size:clamp(1.7rem,3.5vw,2.5rem);font-weight:700;line-height:1.55;margin-bottom:10px}
+.section-head p{color:var(--ink-dim)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:99px;padding:14px 30px;font-weight:700;font-size:1rem;font-family:var(--display);cursor:pointer;border:none;transition:transform .2s ease, box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gradient-gold);color:var(--black);box-shadow:0 12px 32px -10px rgba(212,175,55,.55)}
+.btn-ghost{border:1px solid rgba(212,175,55,.5);color:var(--gold-light);background:transparent}
+.btn-ghost:hover{background:rgba(212,175,55,.08)}
+.ico{width:1.15em;height:1.15em;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* ====== NAV ====== */
+nav{position:fixed;inset-inline:0;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(11,11,11,.82);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:11px}
+.logo svg{width:34px;height:34px}
+.logo .word{font-family:var(--latin);font-weight:300;letter-spacing:.28em;font-size:1rem;color:var(--ink)}
+.logo .word b{color:var(--gold);font-weight:400}
+.nav-links{display:flex;gap:24px;font-size:.92rem;color:var(--ink-dim)}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.nav-cta .btn{padding:11px 22px;font-size:.9rem}
+.lang-btn{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(212,175,55,.5);color:var(--gold-light);background:rgba(212,175,55,.06);border-radius:99px;padding:9px 16px;font-family:var(--latin);font-size:.82rem;letter-spacing:.12em;cursor:pointer;transition:background .2s ease}
+.lang-btn:hover{background:rgba(212,175,55,.14)}
+.menu-btn{display:none;background:none;border:1px solid rgba(212,175,55,.4);color:var(--gold);border-radius:10px;width:42px;height:42px;cursor:pointer;place-items:center}
+
+/* ====== HERO ====== */
+.hero{padding:150px 0 80px;background:var(--gradient-dark);position:relative;overflow:hidden;text-align:center}
+.hero::before{content:"";position:absolute;top:0;inset-inline-start:50%;width:1px;height:120px;background:linear-gradient(180deg,var(--gold),transparent)}
+.hero-eyebrow{font-size:.95rem;letter-spacing:.35em;color:var(--gold);font-weight:600;font-family:var(--display)}
+.lotus{width:74px;height:74px;margin:26px auto 18px;filter:drop-shadow(0 8px 26px rgba(212,175,55,.45))}
+.wordmark{font-family:var(--latin);font-weight:300;font-size:clamp(1.7rem,4vw,2.5rem);letter-spacing:.3em;color:var(--ink)}
+.wordmark::after{content:"";display:block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin:14px auto 0}
+.hero h1{font-size:clamp(2.1rem,5vw,3.4rem);font-weight:700;line-height:1.5;margin:18px 0 8px}
+.hero .sub{color:var(--ink-dim);font-size:1.02rem}
+.hero .sub b{color:var(--gold-light);font-weight:500}
+
+/* hero band: phone next to stats+promo */
+.hero-band{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;max-width:1060px;margin:46px auto 0;text-align:start}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat-card{background:rgba(19,19,19,.85);border:1px solid var(--line);border-radius:20px;padding:18px;display:flex;align-items:center;gap:14px}
+.stat-card .ring{flex-shrink:0;width:46px;height:46px;border-radius:50%;border:1px solid rgba(212,175,55,.55);display:grid;place-items:center;color:var(--gold)}
+.stat-card b{display:block;font-family:var(--display);font-size:1.2rem;color:var(--ink)}
+.stat-card span{font-size:.76rem;color:var(--ink-dim)}
+.promo{margin-top:16px;border-radius:26px;overflow:hidden;border:1px solid rgba(212,175,55,.45);position:relative;background:
+  radial-gradient(90% 140% at 85% 30%,rgba(231,200,115,.5),transparent 55%),
+  radial-gradient(70% 120% at 70% 80%,rgba(184,108,60,.45),transparent 60%),
+  linear-gradient(110deg,#191510 0%,#241c0e 45%,#3a2c12 100%)}
+.promo-grid{display:grid;grid-template-columns:1fr 1.05fr;align-items:stretch}
+@media (max-width:920px){.promo-grid{grid-template-columns:1fr}.player{min-height:230px}}
+/* video player panel */
+.player{position:relative;min-height:260px;overflow:hidden;border-inline-start:1px solid rgba(212,175,55,.35)}
+.player .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.1);transition:opacity 1s ease,transform 6s linear;display:grid;place-items:center}
+.player .slide.on{opacity:1;transform:scale(1)}
+.player .slide .fallback-name{display:none;font-family:var(--display);font-weight:700;font-size:1.3rem;color:var(--gold-light);text-shadow:0 2px 18px rgba(0,0,0,.6);padding:0 20px;text-align:center}
+.player .slide.noimg{background:radial-gradient(90% 120% at 30% 20%,rgba(231,200,115,.4),transparent 55%),linear-gradient(125deg,#241c0e,#0f0d08 60%,#3a2c12);animation:shimmer 5s ease-in-out infinite alternate}
+.player .slide.noimg .fallback-name{display:block}
+@keyframes shimmer{to{filter:brightness(1.35)}}
+.player::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,11,.18),transparent 35%,rgba(11,11,11,.62) 100%);pointer-events:none}
+.reel-bars{position:absolute;top:14px;inset-inline:16px;z-index:3;display:flex;gap:5px}
+.reel-bars i{flex:1;height:3px;border-radius:99px;background:rgba(255,255,255,.28);overflow:hidden;position:relative}
+.reel-bars i::after{content:"";position:absolute;inset:0;background:var(--gradient-gold);transform:scaleX(0);transform-origin:var(--reel-origin,right)}
+[dir="ltr"] .reel-bars i{--reel-origin:left}
+.reel-bars i.done::after{transform:scaleX(1)}
+.reel-bars i.live::after{transform:scaleX(1);transition:transform 2.6s linear}
+.reel-caption{position:absolute;bottom:14px;inset-inline-start:16px;z-index:3;display:flex;align-items:center;gap:9px;background:rgba(11,11,11,.66);border:1px solid rgba(212,175,55,.55);backdrop-filter:blur(6px);border-radius:99px;padding:7px 16px;font-size:.8rem;font-weight:600}
+.reel-caption .dot{width:7px;height:7px;border-radius:50%;background:#e25555;animation:rec 1.2s ease-in-out infinite}
+@keyframes rec{50%{opacity:.25}}
+.play-hint{position:absolute;bottom:14px;inset-inline-end:16px;z-index:3;width:34px;height:34px;border-radius:50%;background:rgba(11,11,11,.66);border:1px solid rgba(212,175,55,.55);display:grid;place-items:center;color:var(--gold);backdrop-filter:blur(6px)}
+.play-hint svg{width:14px;height:14px}
+@media (prefers-reduced-motion:reduce){
+  .player .slide{transition:opacity .3s ease;transform:none}
+  .player .slide.noimg{animation:none}
+  .reel-caption .dot{animation:none}
+  .reel-bars i.live::after{transition:none}
+}
+
+.promo-inner{padding:34px 32px;display:flex;flex-direction:column;align-items:flex-start;gap:6px;position:relative;z-index:1}
+.promo .chip{background:var(--gradient-gold);color:var(--black);font-size:.7rem;font-weight:700;padding:5px 16px;border-radius:99px;font-family:var(--body)}
+.promo p{color:rgba(255,255,255,.85);font-size:.95rem}
+.promo .big{font-family:var(--display);font-weight:700;font-size:clamp(1.8rem,3.6vw,2.6rem);color:#fff;line-height:1.3}
+.promo .big i{font-style:normal;color:var(--gold-light)}
+.hero-cta{margin-top:18px}
+.hero-cta .btn{width:100%;padding:17px;font-size:1.1rem}
+
+/* phone mockup */
+.phone-wrap{display:flex;justify-content:center;perspective:1200px;position:relative}
+.phone-wrap::before{content:"";position:absolute;inset:8% 12%;border-radius:50%;background:radial-gradient(closest-side,rgba(212,175,55,.22),transparent 70%);filter:blur(8px);pointer-events:none}
+.phone{width:300px;border-radius:42px;background:#000;border:1px solid rgba(212,175,55,.5);box-shadow:0 40px 80px -30px rgba(0,0,0,.9),0 0 0 8px #161616,0 0 60px -18px rgba(212,175,55,.35);overflow:hidden;transform:rotateY(8deg) rotateX(3deg);transition:transform .5s ease}
+.phone:hover{transform:rotateY(0) rotateX(0)}
+.p-screen{background:var(--gradient-dark);padding:34px 18px 20px;text-align:center}
+.p-eyebrow{font-size:.55rem;letter-spacing:.3em;color:var(--gold);font-family:var(--display)}
+.p-lotus{width:40px;height:40px;margin:12px auto 8px}
+.p-word{font-family:var(--latin);letter-spacing:.25em;font-size:.85rem}
+.p-h1{font-family:var(--display);font-weight:700;font-size:1.05rem;margin-top:10px}
+.p-h1 i{font-style:normal;color:var(--gold)}
+.p-sub{font-size:.55rem;color:var(--ink-dim);margin-bottom:12px}
+.p-stats{display:grid;grid-template-columns:1fr 1fr;gap:7px;text-align:start}
+.p-stat{background:rgba(19,19,19,.9);border:1px solid var(--line);border-radius:12px;padding:8px 10px;display:flex;align-items:center;gap:8px}
+.p-stat .ring{flex-shrink:0;width:22px;height:22px;border-radius:50%;border:1px solid rgba(212,175,55,.55);display:grid;place-items:center;color:var(--gold)}
+.p-stat .ring svg{width:11px;height:11px}
+.p-stat b{display:block;font-size:.68rem;font-family:var(--display)}
+.p-stat span{font-size:.5rem;color:var(--ink-dim)}
+.p-promo{margin-top:9px;border-radius:14px;border:1px solid rgba(212,175,55,.45);padding:12px 14px;text-align:start;background:radial-gradient(90% 140% at 85% 30%,rgba(231,200,115,.45),transparent 55%),linear-gradient(110deg,#191510,#3a2c12)}
+.p-promo small{font-size:.5rem;background:var(--gradient-gold);color:var(--black);font-weight:700;padding:2px 9px;border-radius:99px}
+.p-promo p{font-size:.55rem;color:rgba(255,255,255,.85);margin-top:5px}
+.p-promo .big{font-family:var(--display);font-weight:700;font-size:1.05rem;color:#fff}
+.p-promo .big i{font-style:normal;color:var(--gold-light)}
+.p-btn{margin-top:9px;background:var(--gradient-gold);color:var(--black);font-size:.62rem;font-weight:700;padding:8px;border-radius:99px;text-align:center;font-family:var(--display)}
+
+/* ====== SERVICES ====== */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+.svc{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);min-height:290px;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;isolation:isolate;transition:transform .25s ease,border-color .25s ease;background-size:cover;background-position:center}
+.svc:hover{transform:translateY(-5px);border-color:rgba(212,175,55,.6)}
+.svc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,11,.12) 0%,rgba(11,11,11,.55) 55%,rgba(11,11,11,.94) 100%);z-index:-1}
+.svc .ring{width:58px;height:58px;border-radius:50%;border:1.5px solid var(--gold);background:rgba(11,11,11,.55);backdrop-filter:blur(4px);display:grid;place-items:center;color:var(--gold);margin-bottom:auto;align-self:center;margin-top:26px}
+.svc .ring svg{width:26px;height:26px}
+.svc h3{font-size:1.08rem;font-weight:700;text-align:center}
+.svc p{font-size:.78rem;color:var(--ink-dim);text-align:center}
+/* صور مؤقتة من Unsplash — استبدلها بصورك: غيّر رابط url('...') الأول فقط، والتدرّج الذهبي يبقى كخلفية احتياطية */
+.bg-laser{background-image:url('https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=900&q=70'),radial-gradient(85% 90% at 70% 25%,#caa05f66,transparent 60%),linear-gradient(160deg,#231a10,#0e0c08)}
+.bg-botox{background-image:url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=70'),radial-gradient(80% 90% at 30% 20%,#b78a9c4d,transparent 60%),linear-gradient(150deg,#1d1414,#0d0a0a)}
+.bg-filler{background-image:url('https://images.unsplash.com/photo-1579165466741-7f35e4755660?auto=format&fit=crop&w=900&q=70'),radial-gradient(85% 90% at 65% 30%,#c99a6b59,transparent 60%),linear-gradient(165deg,#221710,#0d0b08)}
+.bg-hydra{background-image:url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=70'),radial-gradient(85% 90% at 35% 25%,#6fa8b859,transparent 60%),linear-gradient(155deg,#10181c,#0a0d0f)}
+.bg-skin{background-image:url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=70'),radial-gradient(85% 90% at 70% 20%,#d8b08c59,transparent 60%),linear-gradient(160deg,#211711,#0d0a08)}
+.bg-derma{background-image:url('https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=900&q=70'),radial-gradient(85% 90% at 30% 25%,#9c8a6b59,transparent 60%),linear-gradient(150deg,#1a1610,#0c0b08)}
+.bg-nails{background-image:url('https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=70'),radial-gradient(85% 90% at 65% 25%,#c97a8a59,transparent 60%),linear-gradient(160deg,#1f1214,#0d090a)}
+.bg-body{background-image:url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=900&q=70'),radial-gradient(85% 90% at 35% 20%,#b89a6b59,transparent 60%),linear-gradient(155deg,#1d1810,#0c0a07)}
+.bg-teeth{background-image:url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=70'),radial-gradient(85% 90% at 70% 25%,#a8b8c459,transparent 60%),linear-gradient(160deg,#14181c,#0a0c0e)}
+.bg-fit{background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=70'),radial-gradient(85% 90% at 30% 25%,#8aa87a59,transparent 60%),linear-gradient(150deg,#141a12,#0a0d09)}
+
+/* ====== WHY + VIP ====== */
+.why{background:var(--black-2);border:1px solid var(--line);border-radius:28px;padding:46px 40px;text-align:center;max-width:880px;margin-inline:auto}
+.why h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;margin:6px 0 4px}
+.why .sub{color:var(--ink-dim);margin-bottom:28px}
+.checks{display:grid;grid-template-columns:repeat(2,minmax(0,300px));gap:16px 60px;justify-content:center;text-align:start}
+.check{display:flex;align-items:center;gap:12px}
+.check .ring{flex-shrink:0;width:30px;height:30px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold)}
+.check .ring svg{width:14px;height:14px}
+.vip{max-width:880px;margin:22px auto 0;background:linear-gradient(120deg,#1c160c,#131313 60%);border:1px solid rgba(212,175,55,.5);border-radius:28px;padding:36px 40px;display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.vip .medal{width:64px;height:64px;border-radius:50%;background:var(--gradient-gold);display:grid;place-items:center;color:var(--black);box-shadow:0 12px 32px -10px rgba(212,175,55,.6)}
+.vip .medal svg{width:30px;height:30px}
+.vip h3{font-size:1.3rem;font-weight:700}
+.vip small{display:block;font-size:.74rem;letter-spacing:.3em;color:var(--gold);margin-bottom:4px;font-family:var(--latin)}
+.vip ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 36px;font-size:.9rem;color:var(--ink-dim)}
+.vip li{display:flex;align-items:center;gap:9px}
+.vip li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* ====== DOCTORS ====== */
+.docs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.doc{background:var(--black-2);border:1px solid var(--line);border-radius:26px;overflow:hidden;text-align:center;transition:border-color .25s ease,transform .25s ease;position:relative}
+.doc:hover{border-color:rgba(212,175,55,.6);transform:translateY(-5px)}
+.doc .badge-x{position:absolute;top:14px;inset-inline-start:14px;background:rgba(11,11,11,.7);border:1px solid rgba(212,175,55,.5);color:var(--gold-light);font-size:.66rem;padding:4px 12px;border-radius:99px;display:flex;align-items:center;gap:5px;backdrop-filter:blur(4px)}
+.doc .badge-x svg{width:11px;height:11px}
+.doc .photo{height:210px;display:grid;place-items:center;position:relative;background:radial-gradient(80% 90% at 50% 20%,rgba(212,175,55,.18),transparent 60%),linear-gradient(160deg,#1c160c,#101010)}
+.doc .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.doc .photo::after{content:"";position:absolute;inset-block-end:0;inset-inline:0;height:60px;background:linear-gradient(180deg,transparent,rgba(19,19,19,.95))}
+.doc .avatar{width:96px;height:96px;border-radius:50%;background:var(--gradient-gold);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:2rem;color:var(--black);border:3px solid rgba(11,11,11,.6);box-shadow:0 14px 34px -12px rgba(212,175,55,.6)}
+.doc .info{padding:20px 18px 24px}
+.doc h3{font-size:1.05rem;font-weight:700}
+.doc .spec{font-size:.82rem;color:var(--gold-light)}
+.doc .meta{display:flex;justify-content:center;gap:16px;margin-top:12px;font-size:.74rem;color:var(--ink-dim)}
+.doc .meta span{display:flex;align-items:center;gap:5px}
+.doc .meta svg{width:13px;height:13px;color:var(--gold)}
+
+/* ====== ELITE ====== */
+.elite-wrap{display:flex;justify-content:center}
+.elite{width:min(560px,100%);border:1.5px solid var(--gold);border-radius:34px;background:radial-gradient(100% 80% at 50% 0%,rgba(212,175,55,.16),transparent 60%),var(--black-2);padding:50px 42px;text-align:center;box-shadow:0 0 70px -22px rgba(212,175,55,.5)}
+.elite .crown{width:78px;height:78px;border-radius:24px;background:var(--gradient-gold);display:grid;place-items:center;color:var(--black);margin:0 auto 22px;box-shadow:0 14px 36px -12px rgba(212,175,55,.65)}
+.elite .crown svg{width:38px;height:38px}
+.elite small{display:block;letter-spacing:.45em;font-size:.74rem;color:var(--gold);font-family:var(--latin)}
+.elite .name{font-family:var(--latin);font-weight:300;font-size:2.6rem;letter-spacing:.35em;margin:6px 0 8px;padding-inline-start:.35em}
+.elite p{color:var(--ink-dim);font-size:.95rem;padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:28px}
+.elite-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:30px}
+.elite-perk{border:1px solid var(--line);border-radius:18px;background:rgba(11,11,11,.55);padding:18px 14px;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:.9rem;font-weight:500}
+.elite-perk .ring{width:42px;height:42px;border-radius:14px;border:1px solid rgba(212,175,55,.5);display:grid;place-items:center;color:var(--gold)}
+.elite-perk .ring svg{width:20px;height:20px}
+.elite .btn{width:100%;padding:17px;font-size:1.05rem}
+
+/* ====== REGIONS ====== */
+.region-chip{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:99px;padding:8px 22px;font-size:.85rem;color:var(--ink-dim)}
+.region-chip svg{width:16px;height:16px;color:var(--gold)}
+.flags{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:30px}
+.flag-card{display:inline-flex;align-items:center;gap:10px;background:var(--black-2);border:1px solid var(--line);border-radius:99px;padding:9px 20px 9px 14px;transition:border-color .25s ease,transform .25s ease}
+[dir="ltr"] .flag-card{padding:9px 14px 9px 20px}
+.flag-card:hover{border-color:rgba(212,175,55,.55);transform:translateY(-3px)}
+.flag{flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1px solid var(--gold-dark);overflow:hidden;box-shadow:0 4px 12px -4px rgba(0,0,0,.8);position:relative}
+.flag img{width:100%;height:100%;object-fit:cover;display:block}
+.flag-card b{font-size:.9rem;font-weight:600}
+
+/* ====== OWNERS / STEPS / PLANS / DOWNLOAD / FOOTER ====== */
+.owners{background:linear-gradient(180deg,var(--black) 0%,var(--black-3) 50%,var(--black) 100%)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.split .sec-title,.dl-inner .sec-title{justify-content:flex-start}
+.split .sec-title::before,.dl-inner .sec-title::before{display:none}
+.benefit-list{display:flex;flex-direction:column;gap:18px;margin-top:26px;margin-bottom:30px}
+.benefit{display:flex;gap:16px;align-items:flex-start}
+.benefit .bullet{flex-shrink:0;width:44px;height:44px;border-radius:14px;background:var(--gradient-gold);color:var(--black);display:grid;place-items:center;box-shadow:0 8px 20px -8px rgba(212,175,55,.5)}
+.benefit .bullet svg{width:20px;height:20px}
+.benefit b{display:block;font-size:1rem}
+.benefit span{font-size:.88rem;color:var(--ink-dim)}
+.actions{display:flex;gap:14px;flex-wrap:wrap}
+.dash-card{background:var(--black-2);border:1px solid rgba(212,175,55,.35);border-radius:26px;padding:26px;box-shadow:0 30px 70px -30px rgba(0,0,0,.85)}
+.dash-card h4{font-family:var(--display);font-size:.95rem;color:var(--gold-light);margin-bottom:18px;display:flex;justify-content:space-between;align-items:center}
+.dash-card h4 small{font-family:var(--body);color:var(--ink-dim);font-weight:400;font-size:.72rem}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.kpi{background:#0f0f0f;border:1px solid var(--line);border-radius:16px;padding:14px;text-align:center}
+.kpi b{display:block;font-family:var(--display);color:var(--gold);font-size:1.25rem}
+.kpi span{font-size:.68rem;color:var(--ink-dim)}
+.bars{display:flex;align-items:flex-end;gap:10px;height:110px;padding:0 6px}
+.bar{flex:1;border-radius:8px 8px 4px 4px;background:linear-gradient(180deg,rgba(212,175,55,.85),rgba(184,148,31,.3));position:relative}
+.bar::after{content:attr(data-d);position:absolute;bottom:-22px;inset-inline:0;text-align:center;font-size:.6rem;color:var(--ink-dim)}
+.dash-foot{margin-top:34px;display:flex;justify-content:space-between;font-size:.72rem;color:var(--ink-dim);border-top:1px solid var(--line);padding-top:12px}
+.dash-foot b{color:var(--gold-light)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;counter-reset:step;margin-top:44px}
+.step{position:relative;background:var(--black-2);border:1px solid var(--line);border-radius:22px;padding:36px 26px 28px}
+.step::before{counter-increment:step;content:counter(step);position:absolute;top:-19px;inset-inline-start:24px;width:44px;height:44px;border-radius:50%;background:var(--gradient-gold);color:var(--black);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:1.1rem;box-shadow:0 8px 20px -8px rgba(212,175,55,.6)}
+[lang="ar"] .step::before{content:counter(step,arabic-indic)}
+.step h3{font-size:1.05rem;margin-bottom:8px}
+.step p{font-size:.88rem;color:var(--ink-dim)}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px;align-items:stretch}
+.plan{background:var(--black-2);border:1px solid var(--line);border-radius:26px;padding:36px 28px;display:flex;flex-direction:column}
+.plan.featured{background:radial-gradient(100% 70% at 50% 0%,rgba(212,175,55,.14),transparent 60%),var(--black-2);border:1.5px solid var(--gold);box-shadow:0 0 50px -15px rgba(212,175,55,.4);position:relative}
+.plan .tag{position:absolute;top:-14px;inset-inline-start:50%;transform:translateX(50%);background:var(--gradient-gold);color:var(--black);font-size:.72rem;font-weight:700;padding:5px 18px;border-radius:99px;white-space:nowrap}
+[dir="ltr"] .plan .tag{transform:translateX(-50%)}
+.plan h3{font-size:1.2rem}
+.plan .price{font-family:var(--display);font-size:2.2rem;font-weight:700;color:var(--gold);margin:14px 0 2px}
+.plan .price small{font-size:.85rem;color:var(--ink-dim);font-family:var(--body);font-weight:400}
+.plan .per{font-size:.78rem;color:var(--ink-dim);margin-bottom:20px}
+.plan ul{list-style:none;display:flex;flex-direction:column;gap:11px;font-size:.88rem;color:var(--ink-dim);flex:1;margin-bottom:26px}
+.plan li{display:flex;gap:10px;align-items:flex-start}
+.plan li svg{width:16px;height:16px;color:var(--gold);flex-shrink:0;margin-top:6px}
+.plan .btn{width:100%}
+.download{background:var(--gradient-dark);border-block:1px solid var(--line)}
+.dl-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+.badges{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
+.badge{display:flex;align-items:center;gap:12px;background:#000;border:1px solid rgba(212,175,55,.5);border-radius:16px;padding:11px 24px;transition:transform .2s ease,border-color .2s ease}
+.badge:hover{transform:translateY(-3px);border-color:var(--gold)}
+.badge svg{width:26px;height:26px;color:var(--ink)}
+.badge small{display:block;font-size:.62rem;color:var(--ink-dim)}
+.badge b{font-size:.95rem}
+.qr{justify-self:center;text-align:center}
+.qr .box{width:170px;height:170px;border-radius:22px;background:repeating-conic-gradient(#1c1c1c 0% 25%,#101010 0% 50%) 50%/22px 22px;border:1.5px solid var(--gold);margin-inline:auto;display:grid;place-items:center}
+.qr .box span{background:var(--black);border:1px solid rgba(212,175,55,.5);border-radius:12px;padding:8px 12px;font-family:var(--latin);letter-spacing:.15em;color:var(--gold);font-size:.7rem}
+.qr p{font-size:.8rem;color:var(--ink-dim);margin-top:12px}
+footer{padding:54px 0 34px;border-top:1px solid var(--line)}
+.foot-grid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:34px}
+.foot-grid p{max-width:320px;color:var(--ink-dim);font-size:.88rem;margin-top:14px}
+.foot-col h4{font-size:.92rem;color:var(--gold-light);margin-bottom:14px;font-family:var(--display)}
+.foot-col a{display:block;font-size:.86rem;color:var(--ink-dim);margin-bottom:9px}
+.foot-col a:hover{color:var(--gold)}
+.copyright{text-align:center;font-size:.78rem;color:var(--ink-dim);border-top:1px solid rgba(212,175,55,.1);padding-top:22px;letter-spacing:.1em}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .btn:hover,.badge:hover,.svc:hover,.flag-card:hover,.doc:hover{transform:none}
+  .phone{transform:none}
+  html{scroll-behavior:auto}
+}
+@media (max-width:920px){
+  .split,.dl-inner,.hero-band{grid-template-columns:1fr}
+  .phone-wrap{order:-1}
+  .phone{width:260px;transform:none}
+  .nav-links{display:none}
+  .menu-btn{display:grid}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:74px;inset-inline:0;background:rgba(11,11,11,.97);padding:24px 6%;gap:18px;border-bottom:1px solid var(--line)}
+  .nav-cta .btn{display:none}
+  .checks{grid-template-columns:1fr}
+  .vip{flex-direction:column;align-items:flex-start}
+  .vip ul{grid-template-columns:1fr}
+  section{padding:64px 0}
+  .hero{padding:120px 0 64px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== SVG ICON LIBRARY ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E7C873"/><stop offset=".5" stop-color="#D4AF37"/><stop offset="1" stop-color="#B8941F"/></linearGradient></defs>
+  <symbol id="i-lotus" viewBox="0 0 48 48"><g fill="url(#gGold)"><path d="M24 6c3.4 4.8 5 9.6 5 13.6 0 5.2-2.2 8.6-5 10.4-2.8-1.8-5-5.2-5-10.4 0-4 1.6-8.8 5-13.6z"/><path opacity=".75" d="M12.5 13c4.6 2.3 7.8 5.6 9.3 9.2 1.8 4.4 1 8.2-1 10.8-3.2-.7-6.4-3.1-8.2-7.5-1.5-3.6-1.5-8.3-.1-12.5z"/><path opacity=".75" d="M35.5 13c1.4 4.2 1.4 8.9-.1 12.5-1.8 4.4-5 6.8-8.2 7.5-2-2.6-2.8-6.4-1-10.8 1.5-3.6 4.7-6.9 9.3-9.2z"/><path opacity=".5" d="M6 24.5c4.7.4 8.8 2.2 11.5 4.9 2.9 2.9 3.9 6.3 3.2 9.2-3.1.8-6.9-.1-9.8-3-2.7-2.7-4.4-6.6-4.9-11.1z"/><path opacity=".5" d="M42 24.5c-.5 4.5-2.2 8.4-4.9 11.1-2.9 2.9-6.7 3.8-9.8 3-.7-2.9.3-6.3 3.2-9.2 2.7-2.7 6.8-4.5 11.5-4.9z"/></g></symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24"><path fill="currentColor" d="M3 7l4.5 4L12 4l4.5 7L21 7l-1.6 11.5a1.5 1.5 0 0 1-1.5 1.3H6.1a1.5 1.5 0 0 1-1.5-1.3L3 7z"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4M8 14h3"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.8 5.8 6.2.9-4.5 4.4 1.1 6.3L12 17.4l-5.6 3 1.1-6.3L3 9.7l6.2-.9L12 3z"/></symbol>
+  <symbol id="i-starf" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 3l2.8 5.8 6.2.9-4.5 4.4 1.1 6.3L12 17.4l-5.6 3 1.1-6.3L3 9.7l6.2-.9L12 3z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v5c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-medal" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M9 14.5L7 21l5-2.5L17 21l-2-6.5M10 9l1.5 1.5L14.5 7"/></symbol>
+  <symbol id="i-clinic" viewBox="0 0 24 24"><path d="M4 21V8l8-5 8 5v13M4 21h16M12 11v6M9 14h6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 2.7 4 5.9 4 9s-1.2 6.3-4 9c-2.8-2.7-4-5.9-4-9s1.2-6.3 4-9z"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L5 13h6l-1 9 8-12h-6l1-8z"/></symbol>
+  <symbol id="i-syringe" viewBox="0 0 24 24"><path d="M19 5l-2-2M21 7l-2-2M17 7l-7.5 7.5a3 3 0 0 1-4.2 0v0a3 3 0 0 1 0-4.2L13 3M5 19l-2 2M7 13l2 2M10 10l2 2"/></symbol>
+  <symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 3c3.5 4.2 6 7.6 6 10.8A6 6 0 0 1 6 13.8C6 10.6 8.5 7.2 12 3z"/><path d="M9.5 13.5a2.5 2.5 0 0 0 2.5 2.5"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3zM19 16l.9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9L19 16z"/></symbol>
+  <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2M4 12h16"/></symbol>
+  <symbol id="i-nail" viewBox="0 0 24 24"><path d="M8 3h8v9a4 4 0 0 1-4 4 4 4 0 0 1-4-4V3z"/><path d="M12 16v5M9 21h6M10 6h4"/></symbol>
+  <symbol id="i-body" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><path d="M9 10c2 1 4 1 6 0M8.5 10.5C10 13 10 15 9 21M15.5 10.5C14 13 14 15 15 21M9 21h1.5M13.5 21H15"/></symbol>
+  <symbol id="i-tooth" viewBox="0 0 24 24"><path d="M7 3.5C9 3.5 10.5 5 12 5s3-1.5 5-1.5S20 6 20 9c0 4-2 6-2.5 9-.3 1.8-1 3-2 3s-1.5-1.5-1.5-3.5c0-1.5-.8-2.5-2-2.5s-2 1-2 2.5C10 19.5 9.5 21 8.5 21s-1.7-1.2-2-3C6 15 4 13 4 9c0-3 1-5.5 3-5.5z"/></symbol>
+  <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2.5-6 4 12L16 12h5"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 10h18M7 15h4"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path d="M4 5h2l2.2 11.2A2 2 0 0 0 10.2 18h8.3a2 2 0 0 0 2-1.6L22 9H7"/><circle cx="10" cy="21" r="1.4"/><circle cx="18" cy="21" r="1.4"/></symbol>
+  <symbol id="i-apple" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M16.4 12.9c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.1 1-3.9 1s-2-.9-3.4-.9c-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.4-.8s2 .8 3.4.8c1.4 0 2.3-1.3 3.2-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1-2.8-4.2zM13.8 5.2c.7-.9 1.2-2.1 1-3.2-1 0-2.2.7-3 1.5-.6.8-1.2 2-1 3.1 1.1.1 2.3-.5 3-1.4z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M4 3.5v17c0 .6.7 1 1.2.7l14.6-8.5c.5-.3.5-1.1 0-1.4L5.2 2.8C4.7 2.5 4 2.9 4 3.5z"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M9 9l2 2 4-4"/></symbol>
+</svg>
+
+<nav aria-label="القائمة الرئيسية">
+  <div class="container nav-inner">
+    <a href="#" class="logo"><svg aria-hidden="true"><use href="#i-lotus"/></svg><span class="word">BEAUTY <b>HUB</b></span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#services" data-i18n="nav_services"></a>
+      <a href="#doctors" data-i18n="nav_doctors"></a>
+      <a href="#elite" data-i18n="nav_elite"></a>
+      <a href="#owners" data-i18n="nav_owners"></a>
+      <a href="#plans" data-i18n="nav_plans"></a>
+      <a href="#download" data-i18n="nav_download"></a>
+    </div>
+    <div class="nav-cta">
+      <button class="lang-btn" id="langBtn" onclick="toggleLang()" aria-label="Switch language">EN</button>
+      <a href="#download" class="btn btn-gold" data-i18n="nav_cta"></a>
+      <button class="menu-btn" aria-label="القائمة" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <svg class="ico" viewBox="0 0 24 24" width="20" height="20"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="container">
+    <p class="hero-eyebrow" data-i18n="hero_eyebrow"></p>
+    <svg class="lotus" aria-hidden="true"><use href="#i-lotus"/></svg>
+    <div class="wordmark">BEAUTY HUB</div>
+    <h1 data-i18n="hero_h1"></h1>
+    <p class="sub" data-i18n="hero_sub"></p>
+
+    <div class="hero-band">
+      <div>
+        <div class="stat-grid">
+          <div class="stat-card"><span class="ring"><svg class="ico"><use href="#i-star"/></svg></span><div><b>4.9</b><span data-i18n="stat_rating"></span></div></div>
+          <div class="stat-card"><span class="ring"><svg class="ico"><use href="#i-medal"/></svg></span><div><b>+500</b><span data-i18n="stat_doctors"></span></div></div>
+          <div class="stat-card"><span class="ring"><svg class="ico"><use href="#i-clinic"/></svg></span><div><b>+200</b><span data-i18n="stat_clinics"></span></div></div>
+          <div class="stat-card"><span class="ring"><svg class="ico"><use href="#i-calendar"/></svg></span><div><b>24/7</b><span data-i18n="stat_booking"></span></div></div>
+        </div>
+        <div class="promo">
+          <div class="promo-grid">
+            <div class="promo-inner">
+              <span class="chip" data-i18n="promo_chip"></span>
+              <p data-i18n="promo_p"></p>
+              <div class="big" data-i18n="promo_big"></div>
+              <a href="#download" class="btn btn-gold" style="margin-top:10px" data-i18n="promo_btn"></a>
+            </div>
+            <div class="player" id="reel" aria-hidden="true">
+            <div class="slide" data-cap-ar="الليزر لإزالة الشعر" data-cap-en="Laser Hair Removal" data-img="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1100&q=70"><span class="fallback-name">الليزر لإزالة الشعر</span></div>
+            <div class="slide" data-cap-ar="البوتوكس" data-cap-en="Botox" data-img="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1100&q=70"><span class="fallback-name">البوتوكس</span></div>
+            <div class="slide" data-cap-ar="الفيلر" data-cap-en="Fillers" data-img="https://images.unsplash.com/photo-1579165466741-7f35e4755660?auto=format&fit=crop&w=1100&q=70"><span class="fallback-name">الفيلر</span></div>
+            <div class="slide" data-cap-ar="الهايدرافيشيال" data-cap-en="HydraFacial" data-img="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1100&q=70"><span class="fallback-name">الهايدرافيشيال</span></div>
+            <div class="slide" data-cap-ar="العناية بالبشرة" data-cap-en="Skincare" data-img="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1100&q=70"><span class="fallback-name">العناية بالبشرة</span></div>
+            <div class="slide" data-cap-ar="الجلدية" data-cap-en="Dermatology" data-img="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1100&q=70"><span class="fallback-name">الجلدية</span></div>
+            <div class="slide" data-cap-ar="الأظافر" data-cap-en="Nails" data-img="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1100&q=70"><span class="fallback-name">الأظافر</span></div>
+            <div class="slide" data-cap-ar="نحت القوام" data-cap-en="Body Contouring" data-img="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1100&q=70"><span class="fallback-name">نحت القوام</span></div>
+            <div class="slide" data-cap-ar="تبييض الأسنان" data-cap-en="Teeth Whitening" data-img="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1100&q=70"><span class="fallback-name">تبييض الأسنان</span></div>
+            <div class="slide" data-cap-ar="التخسيس والعلاج الطبيعي" data-cap-en="Slimming & Physio" data-img="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1100&q=70"><span class="fallback-name">التخسيس والعلاج الطبيعي</span></div>
+              <div class="reel-bars" id="reelBars"></div>
+              <div class="reel-caption"><span class="dot"></span><span id="reelCap"></span></div>
+              <span class="play-hint"><svg class="ico"><use href="#i-play"/></svg></span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-cta"><a href="#download" class="btn btn-gold" data-i18n="hero_cta"></a></div>
+      </div>
+
+      <!-- phone mockup: live miniature of the app -->
+      <div class="phone-wrap" aria-hidden="true">
+        <div class="phone">
+          <div class="p-screen">
+            <p class="p-eyebrow" data-i18n="hero_eyebrow"></p>
+            <svg class="p-lotus"><use href="#i-lotus"/></svg>
+            <div class="p-word">BEAUTY HUB</div>
+            <div class="p-h1" data-i18n="hero_h1"></div>
+            <p class="p-sub" data-i18n="hero_sub_plain"></p>
+            <div class="p-stats">
+              <div class="p-stat"><span class="ring"><svg class="ico"><use href="#i-star"/></svg></span><div><b>4.9</b><span data-i18n="stat_rating"></span></div></div>
+              <div class="p-stat"><span class="ring"><svg class="ico"><use href="#i-medal"/></svg></span><div><b>+500</b><span data-i18n="stat_doctors"></span></div></div>
+              <div class="p-stat"><span class="ring"><svg class="ico"><use href="#i-clinic"/></svg></span><div><b>+200</b><span data-i18n="stat_clinics"></span></div></div>
+              <div class="p-stat"><span class="ring"><svg class="ico"><use href="#i-calendar"/></svg></span><div><b>24/7</b><span data-i18n="stat_booking"></span></div></div>
+            </div>
+            <div class="p-promo">
+              <small data-i18n="promo_chip"></small>
+              <p data-i18n="promo_p"></p>
+              <div class="big" data-i18n="promo_big"></div>
+            </div>
+            <div class="p-btn" data-i18n="hero_cta"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="sec-title"><span data-i18n="svc_eyebrow"></span></div>
+      <h2 data-i18n="svc_h2"></h2>
+      <p data-i18n="svc_p"></p>
+    </div>
+    <div class="svc-grid">
+      <a href="#download" class="svc bg-laser reveal"><span class="ring"><svg class="ico"><use href="#i-bolt"/></svg></span><h3 data-i18n="s1"></h3><p data-i18n="s1d"></p></a>
+      <a href="#download" class="svc bg-botox reveal"><span class="ring"><svg class="ico"><use href="#i-shield"/></svg></span><h3 data-i18n="s2"></h3><p data-i18n="s2d"></p></a>
+      <a href="#download" class="svc bg-filler reveal"><span class="ring"><svg class="ico"><use href="#i-syringe"/></svg></span><h3 data-i18n="s3"></h3><p data-i18n="s3d"></p></a>
+      <a href="#download" class="svc bg-hydra reveal"><span class="ring"><svg class="ico"><use href="#i-droplet"/></svg></span><h3 data-i18n="s4"></h3><p data-i18n="s4d"></p></a>
+      <a href="#download" class="svc bg-skin reveal"><span class="ring"><svg class="ico"><use href="#i-sparkle"/></svg></span><h3 data-i18n="s5"></h3><p data-i18n="s5d"></p></a>
+      <a href="#download" class="svc bg-derma reveal"><span class="ring"><svg class="ico"><use href="#i-scan"/></svg></span><h3 data-i18n="s6"></h3><p data-i18n="s6d"></p></a>
+      <a href="#download" class="svc bg-nails reveal"><span class="ring"><svg class="ico"><use href="#i-nail"/></svg></span><h3 data-i18n="s7"></h3><p data-i18n="s7d"></p></a>
+      <a href="#download" class="svc bg-body reveal"><span class="ring"><svg class="ico"><use href="#i-body"/></svg></span><h3 data-i18n="s8"></h3><p data-i18n="s8d"></p></a>
+      <a href="#download" class="svc bg-teeth reveal"><span class="ring"><svg class="ico"><use href="#i-tooth"/></svg></span><h3 data-i18n="s9"></h3><p data-i18n="s9d"></p></a>
+      <a href="#download" class="svc bg-fit reveal"><span class="ring"><svg class="ico"><use href="#i-pulse"/></svg></span><h3 data-i18n="s10"></h3><p data-i18n="s10d"></p></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY + VIP ============ -->
+<section style="padding-top:10px">
+  <div class="container">
+    <div class="why reveal">
+      <div class="sec-title"><span data-i18n="why_eyebrow"></span></div>
+      <h2 data-i18n="why_h2"></h2>
+      <p class="sub" data-i18n="why_sub"></p>
+      <div class="checks">
+        <div class="check"><span class="ring"><svg class="ico"><use href="#i-check"/></svg></span><span data-i18n="why1"></span></div>
+        <div class="check"><span class="ring"><svg class="ico"><use href="#i-check"/></svg></span><span data-i18n="why2"></span></div>
+        <div class="check"><span class="ring"><svg class="ico"><use href="#i-check"/></svg></span><span data-i18n="why3"></span></div>
+        <div class="check"><span class="ring"><svg class="ico"><use href="#i-check"/></svg></span><span data-i18n="why4"></span></div>
+      </div>
+    </div>
+    <div class="vip reveal">
+      <div style="display:flex;gap:20px;align-items:center">
+        <span class="medal"><svg class="ico"><use href="#i-medal"/></svg></span>
+        <div><small>BEAUTY HUB VIP</small><h3 data-i18n="vip_h3"></h3></div>
+      </div>
+      <ul>
+        <li data-i18n="vip1"></li>
+        <li data-i18n="vip2"></li>
+        <li data-i18n="vip3"></li>
+        <li data-i18n="vip4"></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOCTORS ============ -->
+<section id="doctors" style="padding-top:10px">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="sec-title"><span data-i18n="doc_eyebrow"></span></div>
+      <h2 data-i18n="doc_h2"></h2>
+      <p data-i18n="doc_p"></p>
+    </div>
+    <div class="docs-grid">
+      <!-- لإضافة صورة حقيقية للطبيب: استبدل div.avatar بـ <img src="images/doctor1.jpg" style="width:100%;height:100%;object-fit:cover"> داخل .photo -->
+      <div class="doc reveal">
+        <span class="badge-x"><svg class="ico"><use href="#i-award"/></svg><span data-i18n="doc_badge"></span></span>
+        <div class="photo"><div class="avatar">س</div><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=70" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="info">
+          <h3 data-i18n="d1"></h3><p class="spec" data-i18n="d1s"></p>
+          <div class="meta"><span><svg class="ico"><use href="#i-starf"/></svg> 4.9</span><span data-i18n="d1y"></span></div>
+        </div>
+      </div>
+      <div class="doc reveal">
+        <span class="badge-x"><svg class="ico"><use href="#i-award"/></svg><span data-i18n="doc_badge2"></span></span>
+        <div class="photo"><div class="avatar">أ</div><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=70" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="info">
+          <h3 data-i18n="d2"></h3><p class="spec" data-i18n="d2s"></p>
+          <div class="meta"><span><svg class="ico"><use href="#i-starf"/></svg> 4.8</span><span data-i18n="d2y"></span></div>
+        </div>
+      </div>
+      <div class="doc reveal">
+        <span class="badge-x"><svg class="ico"><use href="#i-award"/></svg><span data-i18n="doc_badge2"></span></span>
+        <div class="photo"><div class="avatar">ن</div><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=70" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="info">
+          <h3 data-i18n="d3"></h3><p class="spec" data-i18n="d3s"></p>
+          <div class="meta"><span><svg class="ico"><use href="#i-starf"/></svg> 5.0</span><span data-i18n="d3y"></span></div>
+        </div>
+      </div>
+      <div class="doc reveal">
+        <span class="badge-x"><svg class="ico"><use href="#i-award"/></svg><span data-i18n="doc_badge"></span></span>
+        <div class="photo"><div class="avatar">خ</div><img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=70" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="info">
+          <h3 data-i18n="d4"></h3><p class="spec" data-i18n="d4s"></p>
+          <div class="meta"><span><svg class="ico"><use href="#i-starf"/></svg> 4.9</span><span data-i18n="d4y"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ELITE ============ -->
+<section id="elite" style="padding-top:10px">
+  <div class="container">
+    <div class="elite-wrap reveal">
+      <div class="elite">
+        <span class="crown"><svg class="ico"><use href="#i-crown"/></svg></span>
+        <small>BEAUTY HUB</small>
+        <div class="name">ELITE</div>
+        <p data-i18n="elite_p"></p>
+        <div class="elite-grid">
+          <div class="elite-perk"><span class="ring"><svg class="ico"><use href="#i-calendar"/></svg></span><span data-i18n="e1"></span></div>
+          <div class="elite-perk"><span class="ring"><svg class="ico"><use href="#i-star"/></svg></span><span data-i18n="e2"></span></div>
+          <div class="elite-perk"><span class="ring"><svg class="ico"><use href="#i-shield"/></svg></span><span data-i18n="e3"></span></div>
+          <div class="elite-perk"><span class="ring"><svg class="ico"><use href="#i-medal"/></svg></span><span data-i18n="e4"></span></div>
+        </div>
+        <a href="#download" class="btn btn-gold" data-i18n="elite_btn"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REGIONS ============ -->
+<section style="padding-top:10px">
+  <div class="container" style="text-align:center">
+    <div class="section-head reveal" style="margin-bottom:8px">
+      <div class="sec-title"><span data-i18n="reg_eyebrow"></span></div>
+      <span class="region-chip"><svg class="ico"><use href="#i-globe"/></svg> <span data-i18n="reg_chip"></span></span>
+    </div>
+    <div class="flags">
+      <div class="flag-card reveal"><span class="flag"><img src="https://flagcdn.com/w80/sa.png" alt="" loading="lazy" onerror="this.parentElement.style.background='var(--gradient-gold)';this.remove()"></span><b data-i18n="c_sa"></b></div>
+      <div class="flag-card reveal"><span class="flag"><img src="https://flagcdn.com/w80/ae.png" alt="" loading="lazy" onerror="this.parentElement.style.background='var(--gradient-gold)';this.remove()"></span><b data-i18n="c_ae"></b></div>
+      <div class="flag-card reveal"><span class="flag"><img src="https://flagcdn.com/w80/kw.png" alt="" loading="lazy" onerror="this.parentElement.style.background='var(--gradient-gold)';this.remove()"></span><b data-i18n="c_kw"></b></div>
+      <div class="flag-card reveal"><span class="flag"><img src="https://flagcdn.com/w80/qa.png" alt="" loading="lazy" onerror="this.parentElement.style.background='var(--gradient-gold)';this.remove()"></span><b data-i18n="c_qa"></b></div>
+      <div class="flag-card reveal"><span class="flag"><img src="https://flagcdn.com/w80/bh.png" alt="" loading="lazy" onerror="this.parentElement.style.background='var(--gradient-gold)';this.remove()"></span><b data-i18n="c_bh"></b></div>
+      <div class="flag-card reveal"><span class="flag"><img src="https://flagcdn.com/w80/eg.png" alt="" loading="lazy" onerror="this.parentElement.style.background='var(--gradient-gold)';this.remove()"></span><b data-i18n="c_eg"></b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OWNERS ============ -->
+<section id="owners" class="owners">
+  <div class="container split">
+    <div class="reveal">
+      <div class="sec-title"><span data-i18n="own_eyebrow"></span></div>
+      <h2 style="font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:700;margin:8px 0 12px;line-height:1.55" data-i18n="own_h2"></h2>
+      <p style="color:var(--ink-dim)" data-i18n="own_p"></p>
+      <div class="benefit-list">
+        <div class="benefit"><span class="bullet"><svg class="ico"><use href="#i-chart"/></svg></span><div><b data-i18n="b1"></b><span data-i18n="b1d"></span></div></div>
+        <div class="benefit"><span class="bullet"><svg class="ico"><use href="#i-calendar"/></svg></span><div><b data-i18n="b2"></b><span data-i18n="b2d"></span></div></div>
+        <div class="benefit"><span class="bullet"><svg class="ico"><use href="#i-card"/></svg></span><div><b data-i18n="b3"></b><span data-i18n="b3d"></span></div></div>
+        <div class="benefit"><span class="bullet"><svg class="ico"><use href="#i-cart"/></svg></span><div><b data-i18n="b4"></b><span data-i18n="b4d"></span></div></div>
+      </div>
+      <div class="actions">
+        <a href="#how" class="btn btn-gold" data-i18n="own_cta1"></a>
+        <a href="#plans" class="btn btn-ghost" data-i18n="own_cta2"></a>
+      </div>
+    </div>
+    <div class="dash-card reveal" aria-hidden="true">
+      <h4><span data-i18n="dash_t"></span> <small data-i18n="dash_s"></small></h4>
+      <div class="kpis">
+        <div class="kpi"><b>128</b><span data-i18n="k1"></span></div>
+        <div class="kpi"><b>96%</b><span data-i18n="k2"></span></div>
+        <div class="kpi"><b>4.8 ★</b><span data-i18n="k3"></span></div>
+      </div>
+      <div class="bars">
+        <div class="bar" style="height:45%"></div><div class="bar" style="height:62%"></div>
+        <div class="bar" style="height:55%"></div><div class="bar" style="height:78%"></div>
+        <div class="bar" style="height:68%"></div><div class="bar" style="height:92%"></div>
+        <div class="bar" style="height:100%"></div>
+      </div>
+      <div class="dash-foot"><span data-i18n="dash_f1"></span><b data-i18n="dash_f2"></b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW ============ -->
+<section id="how">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="sec-title"><span data-i18n="how_eyebrow"></span></div>
+      <h2 data-i18n="how_h2"></h2>
+      <p data-i18n="how_p"></p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3 data-i18n="st1"></h3><p data-i18n="st1d"></p></div>
+      <div class="step reveal"><h3 data-i18n="st2"></h3><p data-i18n="st2d"></p></div>
+      <div class="step reveal"><h3 data-i18n="st3"></h3><p data-i18n="st3d"></p></div>
+      <div class="step reveal"><h3 data-i18n="st4"></h3><p data-i18n="st4d"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLANS ============ -->
+<section id="plans" style="padding-top:20px">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="sec-title"><span data-i18n="pl_eyebrow"></span></div>
+      <h2 data-i18n="pl_h2"></h2>
+      <p data-i18n="pl_p"></p>
+    </div>
+    <div class="plans">
+      <div class="plan reveal">
+        <h3 data-i18n="p1"></h3>
+        <div class="price" data-i18n="p1pr"></div>
+        <div class="per" data-i18n="p1per"></div>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p1f1"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p1f2"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p1f3"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p1f4"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p1f5"></span></li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" data-i18n="p1btn"></a>
+      </div>
+      <div class="plan featured reveal">
+        <span class="tag" data-i18n="p2tag"></span>
+        <h3 data-i18n="p2"></h3>
+        <div class="price" data-i18n="p2pr"></div>
+        <div class="per" data-i18n="p2per"></div>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p2f1"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p2f2"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p2f3"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p2f4"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p2f5"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p2f6"></span></li>
+        </ul>
+        <a href="#contact" class="btn btn-gold" data-i18n="p2btn"></a>
+      </div>
+      <div class="plan reveal">
+        <h3 data-i18n="p3"></h3>
+        <div class="price" data-i18n="p3pr"></div>
+        <div class="per" data-i18n="p3per"></div>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p3f1"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p3f2"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p3f3"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p3f4"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p3f5"></span></li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" data-i18n="p3btn"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOWNLOAD ============ -->
+<section id="download" class="download">
+  <div class="container dl-inner">
+    <div class="reveal">
+      <div class="sec-title"><span data-i18n="dl_eyebrow"></span></div>
+      <h2 style="font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:700;margin:8px 0 12px;line-height:1.55" data-i18n="dl_h2"></h2>
+      <p style="color:var(--ink-dim);max-width:480px" data-i18n="dl_p"></p>
+      <div class="badges">
+        <a href="#" class="badge"><svg class="ico"><use href="#i-apple"/></svg><span><small data-i18n="dl_ios_s"></small><b>App Store</b></span></a>
+        <a href="#" class="badge"><svg class="ico"><use href="#i-play"/></svg><span><small data-i18n="dl_and_s"></small><b>Google Play</b></span></a>
+      </div>
+    </div>
+    <div class="qr reveal" id="contact">
+      <div class="box"><span>BEAUTY HUB</span></div>
+      <p data-i18n="dl_qr"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a href="#" class="logo"><svg aria-hidden="true"><use href="#i-lotus"/></svg><span class="word">BEAUTY <b>HUB</b></span></a>
+        <p data-i18n="ft_about"></p>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="ft_t1"></h4>
+        <a href="#services" data-i18n="nav_services"></a>
+        <a href="#doctors" data-i18n="nav_doctors"></a>
+        <a href="#owners" data-i18n="nav_owners"></a>
+        <a href="#plans" data-i18n="nav_plans"></a>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="ft_t2"></h4>
+        <a href="#" data-i18n="ft_help"></a>
+        <a href="#" data-i18n="ft_priv"></a>
+        <a href="#" data-i18n="ft_terms"></a>
+        <a href="#" data-i18n="ft_contact"></a>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="ft_t3"></h4>
+        <a href="mailto:info@beautyhub.app">info@beautyhub.app</a>
+        <a href="#" data-i18n="ft_wa"></a>
+        <a href="#" data-i18n="ft_social"></a>
+      </div>
+    </div>
+    <div class="copyright">BEAUTY HUB · 2026 — <span data-i18n="ft_rights"></span></div>
+  </div>
+</footer>
+
+<script>
+/* ===================== I18N ===================== */
+const T = {
+ar:{
+nav_services:"خدماتنا", nav_doctors:"أطباؤنا", nav_elite:"عضوية النخبة", nav_owners:"لأصحاب المراكز", nav_plans:"الباقات", nav_download:"حمّل التطبيق", nav_cta:"حمّل التطبيق",
+hero_eyebrow:"طب التجميل الفاخر",
+hero_h1:'جمالكِ يستحق <span class="gold-text">الأفضل</span>',
+hero_sub:"عيادات متميزة <b>·</b> أطباء معتمدون <b>·</b> نتائج مضمونة",
+hero_sub_plain:"عيادات متميزة · أطباء معتمدون",
+stat_rating:"تقييم العملاء", stat_doctors:"طبيب معتمد", stat_clinics:"عيادة متخصصة", stat_booking:"حجز فوري",
+promo_chip:"عرض محدود", promo_p:"على جميع الجلسات التجميلية", promo_big:'حتى <i>%30</i>', promo_btn:"احجز الآن", hero_cta:"ابدأ تجربتك الفاخرة",
+svc_eyebrow:"خدماتنا المتميزة", svc_h2:'عشر تخصصات تجميلية <span class="gold-text">بأعلى المعايير</span>', svc_p:"كل خدمة تُقدَّم عبر عيادات معتمدة وأطباء متخصصين، مع متابعة كاملة بعد الجلسة.",
+s1:"الليزر لإزالة الشعر", s1d:"أحدث أجهزة الليزر الآمنة لجميع أنواع البشرة",
+s2:"البوتوكس", s2d:"نضارة طبيعية وملامح مشدودة بأيدٍ خبيرة",
+s3:"الفيلر", s3d:"تحديد وملء بنتائج متناسقة وفورية",
+s4:"الهايدرافيشيال", s4d:"تنظيف عميق وترطيب مكثف بإشراق فوري",
+s5:"العناية بالبشرة", s5d:"بروتوكولات مخصصة لنضارة تدوم",
+s6:"الجلدية", s6d:"تشخيص وعلاج مشاكل البشرة والشعر",
+s7:"الأظافر", s7d:"عناية احترافية وتصاميم راقية",
+s8:"نحت القوام", s8d:"تقنيات غير جراحية لقوام متناسق",
+s9:"تبييض الأسنان", s9d:"ابتسامة هوليوود بجلسة واحدة",
+s10:"التخسيس والعلاج الطبيعي", s10d:"برامج متكاملة بإشراف طبي",
+why_eyebrow:"لماذا بيوتي هب", why_h2:"احجز مع أفضل الأطباء المعتمدين", why_sub:"في أقل من دقيقة",
+why1:"نتائج موثّقة", why2:"تقييمات حقيقية", why3:"متابعة بعد الجلسة", why4:"حجز سريع وآمن",
+vip_h3:"تجربة فاخرة حصرية", vip1:"أفضل العيادات المعتمدة", vip2:"أطباء خبراء متخصصون", vip3:"متابعة بعد الجلسة", vip4:"أسعار تنافسية حصرية",
+doc_eyebrow:"أطباؤنا المتخصصون", doc_h2:'نخبة من الأطباء <span class="gold-text">المعتمدين</span>', doc_p:"كل طبيب على المنصة موثّق التراخيص والخبرات، وتقييماته من جلسات حقيقية.",
+doc_badge:"خبير", doc_badge2:"طبيب معتمد",
+d1:"د. سارة المنصور", d1s:"تجميل الوجه", d1y:"١٢ سنة خبرة",
+d2:"د. أحمد الراشد", d2s:"الليزر والبشرة", d2y:"١٥ سنة خبرة",
+d3:"د. نورا العتيبي", d3s:"الحقن التجميلية", d3y:"١٠ سنوات خبرة",
+d4:"د. خالد العمري", d4s:"تجميل الأسنان", d4y:"١٤ سنة خبرة",
+elite_p:"عضوية حصرية لتجربة جمال لا مثيل لها",
+e1:"أولوية الحجز", e2:"عروض حصرية", e3:"دعم VIP", e4:"مكافآت فاخرة", elite_btn:"انضم إلى النخبة",
+reg_eyebrow:"حضورنا الإقليمي", reg_chip:"6 دول · مئات العيادات",
+c_sa:"السعودية", c_ae:"الإمارات", c_kw:"الكويت", c_qa:"قطر", c_bh:"البحرين", c_eg:"مصر",
+own_eyebrow:"لأصحاب العيادات والمراكز", own_h2:'وسّع أعمالك وضاعف حجوزاتك<br><span class="gold-text">مع بيوتي هب</span>', own_p:"انضم إلى مئات العيادات في ٦ دول تدير حجوزاتها وعملاءها ومبيعاتها من لوحة تحكم واحدة.",
+b1:"عملاء جدد كل يوم", b1d:"اعرض خدماتك أمام آلاف الباحثات عن جلسات التجميل في مدينتك.",
+b2:"إدارة كاملة للحجوزات", b2d:"جدول مواعيد ذكي، تأكيد وإلغاء تلقائي، وتذكيرات تقلّل نسبة الغياب.",
+b3:"مدفوعات إلكترونية آمنة", b3d:"استقبل المدفوعات أونلاين عبر بوابة دفع موثوقة مع تسوية دورية لحسابك.",
+b4:"بيع منتجاتك في المتجر", b4d:"أضف منتجات العناية الخاصة بعيادتك وحقق دخلًا إضافيًا.",
+own_cta1:"سجّل عيادتك الآن", own_cta2:"شاهد الباقات",
+dash_t:"لوحة تحكم العيادة", dash_s:"آخر ٧ أيام", k1:"حجز جديد", k2:"نسبة الحضور", k3:"متوسط التقييم", dash_f1:"إيرادات الأسبوع", dash_f2:"+٢٤٪ عن الأسبوع الماضي",
+how_eyebrow:"كيفية الاشتراك", how_h2:'عيادتك على بيوتي هب في <span class="gold-text">٤ خطوات بسيطة</span>', how_p:"من التسجيل حتى استقبال أول حجز — العملية كاملة لا تستغرق أكثر من ٤٨ ساعة.",
+st1:"أنشئ حساب عيادتك", st1d:"سجّل ببيانات العيادة الأساسية: الاسم، المدينة، التراخيص، وبيانات التواصل.",
+st2:"اختر باقتك", st2d:"قارن بين الباقات واختر ما يناسب حجم عيادتك، مع إمكانية الترقية في أي وقت.",
+st3:"أضف خدماتك وأسعارك", st3d:"ارفع صور العيادة، وأضف الخدمات والأطباء والمواعيد المتاحة من لوحة التحكم.",
+st4:"استقبل حجوزاتك", st4d:"بعد مراجعة واعتماد الملف، تظهر عيادتك للعملاء وتبدأ الحجوزات بالوصول فورًا.",
+pl_eyebrow:"باقات الاشتراك", pl_h2:'باقات مرنة <span class="gold-text">تنمو مع عيادتك</span>', pl_p:"جميع الباقات تشمل لوحة التحكم، الدعم الفني، والظهور في نتائج البحث داخل التطبيق.",
+p1:"الأساسية", p1pr:'٩٩٩ <small>ج.م</small>', p1per:"شهريًا · للعيادات الناشئة",
+p1f1:"حتى ١٥ خدمة معروضة", p1f2:"طبيب أو أخصائي واحد", p1f3:"إدارة الحجوزات والمواعيد", p1f4:"تقارير أداء شهرية", p1f5:"دعم فني عبر البريد", p1btn:"ابدأ بالأساسية",
+p2tag:"الأكثر اختيارًا", p2:"الاحترافية", p2pr:'٢٤٩٩ <small>ج.م</small>', p2per:"شهريًا · للعيادات المتوسطة",
+p2f1:"خدمات غير محدودة", p2f2:"حتى ١٠ أطباء وأخصائيين", p2f3:"الدفع الإلكتروني داخل التطبيق", p2f4:"بيع المنتجات في المتجر", p2f5:"ظهور مميز في نتائج البحث", p2f6:"دعم فني أولوية على مدار الساعة", p2btn:"اشترك في الاحترافية",
+p3:"الشركات", p3pr:"حسب الاتفاق", p3per:"للسلاسل والمراكز متعددة الفروع",
+p3f1:"كل مميزات الباقة الاحترافية", p3f2:"فروع وحسابات غير محدودة", p3f3:"مدير حساب مخصص", p3f4:"حملات تسويقية مشتركة", p3f5:"تكامل مع أنظمتك الحالية", p3btn:"تواصل مع المبيعات",
+dl_eyebrow:"للعملاء", dl_h2:'حمّلي التطبيق وابدئي <span class="gold-text">تجربتك الفاخرة</span>', dl_p:"التطبيق مجاني بالكامل. حمّليه الآن وتصفّحي العيادات المعتمدة في دولتك، واحجزي جلستك الأولى خلال دقيقة.",
+dl_ios_s:"حمّليه من", dl_and_s:"متوفر على", dl_qr:"امسحي الرمز بكاميرا هاتفك لتحميل التطبيق مباشرة",
+ft_about:"منصة طب التجميل الفاخر في ٦ دول — تجمع أفضل العيادات والأطباء المعتمدين، وتمنح أصحاب المراكز أدوات النمو والإدارة الحديثة.",
+ft_t1:"المنصة", ft_t2:"الدعم", ft_t3:"تواصل",
+ft_help:"مركز المساعدة", ft_priv:"سياسة الخصوصية", ft_terms:"الشروط والأحكام", ft_contact:"تواصل معنا", ft_wa:"واتساب الأعمال", ft_social:"انستجرام · تيك توك",
+ft_rights:"جميع الحقوق محفوظة"
+},
+en:{
+nav_services:"Services", nav_doctors:"Doctors", nav_elite:"Elite Membership", nav_owners:"For Clinics", nav_plans:"Plans", nav_download:"Get the App", nav_cta:"Get the App",
+hero_eyebrow:"LUXURY AESTHETIC MEDICINE",
+hero_h1:'Your Beauty Deserves <span class="gold-text">the Best</span>',
+hero_sub:"Premium clinics <b>·</b> Certified doctors <b>·</b> Guaranteed results",
+hero_sub_plain:"Premium clinics · Certified doctors",
+stat_rating:"Client rating", stat_doctors:"Certified doctors", stat_clinics:"Specialized clinics", stat_booking:"Instant booking",
+promo_chip:"Limited offer", promo_p:"On all aesthetic sessions", promo_big:'Up to <i>30%</i>', promo_btn:"Book now", hero_cta:"Start Your Luxury Experience",
+svc_eyebrow:"OUR PREMIUM SERVICES", svc_h2:'Ten aesthetic specialties <span class="gold-text">at the highest standards</span>', svc_p:"Every service is delivered by certified clinics and specialist doctors, with full post-session follow-up.",
+s1:"Laser Hair Removal", s1d:"The latest safe laser devices for all skin types",
+s2:"Botox", s2d:"Natural radiance and refined features by expert hands",
+s3:"Fillers", s3d:"Contouring and volume with balanced, instant results",
+s4:"HydraFacial", s4d:"Deep cleansing and intense hydration with instant glow",
+s5:"Skincare", s5d:"Tailored protocols for lasting radiance",
+s6:"Dermatology", s6d:"Diagnosis and treatment of skin and hair conditions",
+s7:"Nails", s7d:"Professional care and elegant designs",
+s8:"Body Contouring", s8d:"Non-surgical techniques for a balanced silhouette",
+s9:"Teeth Whitening", s9d:"A Hollywood smile in a single session",
+s10:"Slimming & Physiotherapy", s10d:"Complete programs under medical supervision",
+why_eyebrow:"WHY BEAUTY HUB", why_h2:"Book with the best certified doctors", why_sub:"In less than a minute",
+why1:"Verified results", why2:"Real reviews", why3:"Post-session follow-up", why4:"Fast & secure booking",
+vip_h3:"An Exclusive Luxury Experience", vip1:"Top certified clinics", vip2:"Expert specialist doctors", vip3:"Post-session follow-up", vip4:"Exclusive competitive prices",
+doc_eyebrow:"OUR SPECIALISTS", doc_h2:'An elite of <span class="gold-text">certified doctors</span>', doc_p:"Every doctor on the platform is verified for licenses and experience, with ratings from real sessions.",
+doc_badge:"Expert", doc_badge2:"Certified doctor",
+d1:"Dr. Sara Al-Mansour", d1s:"Facial Aesthetics", d1y:"12 yrs experience",
+d2:"Dr. Ahmed Al-Rashed", d2s:"Laser & Skin", d2y:"15 yrs experience",
+d3:"Dr. Noura Al-Otaibi", d3s:"Aesthetic Injections", d3y:"10 yrs experience",
+d4:"Dr. Khaled Al-Omari", d4s:"Cosmetic Dentistry", d4y:"14 yrs experience",
+elite_p:"An exclusive membership for an unmatched beauty experience",
+e1:"Booking priority", e2:"Exclusive offers", e3:"VIP support", e4:"Luxury rewards", elite_btn:"Join the Elite",
+reg_eyebrow:"OUR REGIONAL PRESENCE", reg_chip:"6 countries · Hundreds of clinics",
+c_sa:"Saudi Arabia", c_ae:"UAE", c_kw:"Kuwait", c_qa:"Qatar", c_bh:"Bahrain", c_eg:"Egypt",
+own_eyebrow:"FOR CLINIC & CENTER OWNERS", own_h2:'Grow your business and multiply your bookings<br><span class="gold-text">with Beauty Hub</span>', own_p:"Join hundreds of clinics across 6 countries managing their bookings, clients and sales from one dashboard.",
+b1:"New clients every day", b1d:"Showcase your services to thousands searching for aesthetic sessions in your city.",
+b2:"Complete booking management", b2d:"Smart scheduling, automatic confirmations and reminders that reduce no-shows.",
+b3:"Secure online payments", b3d:"Accept payments online through a trusted gateway with regular settlements.",
+b4:"Sell your products in the store", b4d:"Add your clinic's skincare products and earn extra revenue.",
+own_cta1:"Register Your Clinic", own_cta2:"View Plans",
+dash_t:"Clinic Dashboard", dash_s:"Last 7 days", k1:"New bookings", k2:"Attendance", k3:"Avg. rating", dash_f1:"Weekly revenue", dash_f2:"+24% vs last week",
+how_eyebrow:"HOW TO SUBSCRIBE", how_h2:'Your clinic on Beauty Hub in <span class="gold-text">4 simple steps</span>', how_p:"From registration to your first booking — the whole process takes no more than 48 hours.",
+st1:"Create your clinic account", st1d:"Register with basic details: name, city, licenses, and contact information.",
+st2:"Choose your plan", st2d:"Compare plans and pick what fits your clinic's size, with upgrades anytime.",
+st3:"Add services & prices", st3d:"Upload photos, add services, doctors and available slots from the dashboard.",
+st4:"Receive your bookings", st4d:"After review and approval, your clinic goes live and bookings start arriving.",
+pl_eyebrow:"SUBSCRIPTION PLANS", pl_h2:'Flexible plans that <span class="gold-text">grow with your clinic</span>', pl_p:"All plans include the dashboard, technical support, and visibility in the app's search results.",
+p1:"Basic", p1pr:'999 <small>EGP</small>', p1per:"Monthly · For new clinics",
+p1f1:"Up to 15 listed services", p1f2:"One doctor or specialist", p1f3:"Booking & schedule management", p1f4:"Monthly performance reports", p1f5:"Email support", p1btn:"Start with Basic",
+p2tag:"Most popular", p2:"Professional", p2pr:'2,499 <small>EGP</small>', p2per:"Monthly · For mid-size clinics",
+p2f1:"Unlimited services", p2f2:"Up to 10 doctors & specialists", p2f3:"In-app online payments", p2f4:"Sell products in the store", p2f5:"Featured search placement", p2f6:"24/7 priority support", p2btn:"Go Professional",
+p3:"Enterprise", p3pr:"Custom", p3per:"For chains & multi-branch centers",
+p3f1:"Everything in Professional", p3f2:"Unlimited branches & accounts", p3f3:"Dedicated account manager", p3f4:"Joint marketing campaigns", p3f5:"Integration with your systems", p3btn:"Talk to Sales",
+dl_eyebrow:"FOR CLIENTS", dl_h2:'Download the app and start <span class="gold-text">your luxury experience</span>', dl_p:"The app is completely free. Download it now, browse certified clinics in your country, and book your first session in a minute.",
+dl_ios_s:"Download on the", dl_and_s:"Get it on", dl_qr:"Scan the code with your phone camera to download the app",
+ft_about:"The luxury aesthetic medicine platform in 6 countries — bringing together the best certified clinics and doctors, and giving owners modern growth and management tools.",
+ft_t1:"Platform", ft_t2:"Support", ft_t3:"Contact",
+ft_help:"Help Center", ft_priv:"Privacy Policy", ft_terms:"Terms & Conditions", ft_contact:"Contact Us", ft_wa:"WhatsApp Business", ft_social:"Instagram · TikTok",
+ft_rights:"All rights reserved"
+}
+};
+
+let lang = "ar";
+function applyLang(){
+  const d = T[lang];
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k = el.getAttribute("data-i18n");
+    if(d[k] !== undefined) el.innerHTML = d[k];
+  });
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  document.getElementById("langBtn").textContent = lang === "ar" ? "EN" : "عربي";
+  document.title = lang === "ar" ? "بيوتي هب | Beauty Hub — طب التجميل الفاخر" : "Beauty Hub — Luxury Aesthetic Medicine";
+}
+function toggleLang(){ lang = lang === "ar" ? "en" : "ar"; applyLang(); if(typeof showSlide==="function") showSlide(cur); }
+applyLang();
+
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+
+/* ===== promo service reel — always plays ===== */
+var cur = 0, showSlide = null;
+try {
+  var reel = document.getElementById('reel');
+  var slides = Array.prototype.slice.call(reel.querySelectorAll('.slide'));
+  var barsWrap = document.getElementById('reelBars');
+  slides.forEach(function(){ barsWrap.appendChild(document.createElement('i')); });
+  var bars = Array.prototype.slice.call(barsWrap.children);
+  var capEl = document.getElementById('reelCap');
+
+  /* preload every slide image; on success set as background, on failure mark as styled fallback */
+  slides.forEach(function(sl){
+    var img = new Image();
+    img.onload = function(){ sl.style.backgroundImage = "url('" + sl.dataset.img + "')"; sl.classList.remove('noimg'); };
+    img.onerror = function(){ sl.classList.add('noimg'); };
+    sl.classList.add('noimg');           /* animated gold fallback until the photo arrives */
+    img.src = sl.dataset.img;
+  });
+
+  showSlide = function(i){
+    slides.forEach(function(s,n){ s.classList.toggle('on', n===i); });
+    bars.forEach(function(b,n){ b.classList.toggle('done', n<i); b.classList.remove('live'); });
+    void bars[i].offsetWidth;
+    bars[i].classList.add('live');
+    capEl.textContent = slides[i].dataset[lang==='ar' ? 'capAr' : 'capEn'];
+  };
+  showSlide(0);
+  var reduced = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  setInterval(function(){ cur = (cur+1) % slides.length; showSlide(cur); }, reduced ? 4000 : 2600);
+} catch(e) { console.warn('reel disabled:', e); }
+</script>
+</body>
+</html>
